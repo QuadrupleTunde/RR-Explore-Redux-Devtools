@@ -24,7 +24,7 @@ export const todoSlice = createSlice({
                 return { items: array }
             }
         },
-        cleartodo: () => {
+        clearTodo: () => {
             return { todos: [] }
         }
     }
