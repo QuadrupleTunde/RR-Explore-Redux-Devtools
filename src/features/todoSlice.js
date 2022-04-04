@@ -9,7 +9,11 @@ export const todoSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
-            return { items: [...state.items, action.payload]}
+            console.log(state.items)
+            let newItems = (typeof state.items !== 'undefined')?
+            {items:[...state.items, action.payload]}:
+            {items: [action.payload]}
+            return newItems
         },
         removeOne: (state, action) => {
             console.log(action)
@@ -21,7 +25,7 @@ export const todoSlice = createSlice({
             }
         },
         cleartodo: () => {
-            return { todo: [] }
+            return { todos: [] }
         }
     }
 })
